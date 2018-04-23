@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{E44D4EBD-8D9E-40C5-9A62-4E3FDE2160D7}</ProjectGuid>
+    <ProjectGuid>{282EABB4-EC29-4D8A-A79E-D7CD174B0FF5}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>RestaurantReviews</RootNamespace>
-    <AssemblyName>RestaurantReviews</AssemblyName>
+    <RootNamespace>ConsoleApp3</RootNamespace>
+    <AssemblyName>ConsoleApp3</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -42,11 +42,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="IReviewable.cs" />
-    <Compile Include="RestaurantClass.cs" />
+    <Compile Include="PalindromeCheck.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="ReviewClass.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
