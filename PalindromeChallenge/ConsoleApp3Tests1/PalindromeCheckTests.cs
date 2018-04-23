@@ -23,6 +23,16 @@ namespace ConsoleApp3.Tests
         }
 
         [TestMethod()]
+        public void CheckTextTestTrueCI()
+        {
+            string x1 = "Racecar";
+            PalindromeCheck x = new PalindromeCheck(x1);
+            bool test1 = x.CheckText(x1);
+            Assert.AreEqual(test1, true);
+
+        }
+
+        [TestMethod()]
         public void CheckTextTestFalse()
         {
             string x1 = "raceq;aeiubvql;ruijcar";
@@ -30,5 +40,7 @@ namespace ConsoleApp3.Tests
             bool test1 = x.CheckText(x1);
             Assert.AreEqual(test1, false);
         }
+
+
     }
 }
