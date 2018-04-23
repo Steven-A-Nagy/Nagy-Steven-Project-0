@@ -1,6 +1,6 @@
 ﻿using System;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using ConsoleApp3.PalindromeCheck;
+using ConsoleApp3;
 
 namespace PalindromeCheckTest
 {
