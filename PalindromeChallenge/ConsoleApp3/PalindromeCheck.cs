@@ -25,13 +25,13 @@ namespace ConsoleApp3
         public Stack<char> I2;
         
 
-        public bool CheckText(string TC, Stack<char> C1, Stack<char> C2)
+        public bool CheckText(string TC)
         {
             bool check = true;
             for (int i = 0; i < TC.Count(); i++)
             {
-                string d1 = C1.Pop().ToString();
-                string d2 = C2.Pop().ToString();
+                string d1 = I1.Pop().ToString();
+                string d2 = I2.Pop().ToString();
                 if (!(d1.Equals(d2, StringComparison.InvariantCultureIgnoreCase)))
                 {
                     check = false;

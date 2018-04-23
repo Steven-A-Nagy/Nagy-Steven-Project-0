@@ -5,7 +5,7 @@ VisualStudioVersion = 15.0.27428.2037
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleApp3", "ConsoleApp3\ConsoleApp3.csproj", "{282EABB4-EC29-4D8A-A79E-D7CD174B0FF5}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PalindromeCheckTest", "PalindromeCheckTest\PalindromeCheckTest.csproj", "{477324E1-0428-4F92-A311-EEFED4472D18}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleApp3Tests1", "ConsoleApp3Tests1\ConsoleApp3Tests1.csproj", "{AA78EF03-476F-4995-A017-992A34F930C2}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -17,10 +17,10 @@ Global
 		{282EABB4-EC29-4D8A-A79E-D7CD174B0FF5}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{282EABB4-EC29-4D8A-A79E-D7CD174B0FF5}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{282EABB4-EC29-4D8A-A79E-D7CD174B0FF5}.Release|Any CPU.Build.0 = Release|Any CPU
-		{477324E1-0428-4F92-A311-EEFED4472D18}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{477324E1-0428-4F92-A311-EEFED4472D18}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{477324E1-0428-4F92-A311-EEFED4472D18}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{477324E1-0428-4F92-A311-EEFED4472D18}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AA78EF03-476F-4995-A017-992A34F930C2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AA78EF03-476F-4995-A017-992A34F930C2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AA78EF03-476F-4995-A017-992A34F930C2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AA78EF03-476F-4995-A017-992A34F930C2}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

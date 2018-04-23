@@ -11,16 +11,24 @@ namespace ConsoleApp3.Tests
     [TestClass()]
     public class PalindromeCheckTests
     {
+
         [TestMethod()]
-        public void PalindromeCheckTest()
+        public void CheckTextTestTrue()
         {
-            Assert.Fail();
+            string x1 = "racecar";
+            PalindromeCheck x = new PalindromeCheck(x1);
+            bool test1 = x.CheckText(x1);
+            Assert.AreEqual(test1, true);
+
         }
 
         [TestMethod()]
-        public void CheckTextTest()
+        public void CheckTextTestFalse()
         {
-            Assert.Fail();
+            string x1 = "raceq;aeiubvql;ruijcar";
+            PalindromeCheck x = new PalindromeCheck(x1);
+            bool test1 = x.CheckText(x1);
+            Assert.AreEqual(test1, false);
         }
     }
 }
