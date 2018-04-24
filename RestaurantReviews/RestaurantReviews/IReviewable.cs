@@ -11,7 +11,8 @@ namespace RestaurantReviews
         List<ReviewClass> ReviewList { get; }
         void AddReview(ReviewClass NewReview);
         void RemoveReview(string ID);
-        ReviewClass GetReview();
+        ReviewClass GetReview(string ReviewName);
+        void PrintReview(string ReviewName);
         void PrintAllReviews();
 
     }

@@ -17,7 +17,7 @@ namespace ConsoleApp3.Tests
         {
             string x1 = "racecar";
             PalindromeCheck x = new PalindromeCheck(x1);
-            bool test1 = x.CheckText(x1);
+            bool test1 = x.CheckText();
             Assert.AreEqual(test1, true);
 
         }
@@ -27,7 +27,7 @@ namespace ConsoleApp3.Tests
         {
             string x1 = "Racecar";
             PalindromeCheck x = new PalindromeCheck(x1);
-            bool test1 = x.CheckText(x1);
+            bool test1 = x.CheckText();
             Assert.AreEqual(test1, true);
 
         }
@@ -37,7 +37,7 @@ namespace ConsoleApp3.Tests
         {
             string x1 = "1221";
             PalindromeCheck x = new PalindromeCheck(x1);
-            bool test1 = x.CheckText(x1);
+            bool test1 = x.CheckText();
             Assert.AreEqual(test1, true);
 
         }
@@ -47,7 +47,7 @@ namespace ConsoleApp3.Tests
         {
             string x1 = "Race..car";
             PalindromeCheck x = new PalindromeCheck(x1);
-            bool test1 = x.CheckText(x1);
+            bool test1 = x.CheckText();
             Assert.AreEqual(test1, true);
 
         }
@@ -57,7 +57,7 @@ namespace ConsoleApp3.Tests
         {
             string x1 = "q;aeiubvql;ruij";
             PalindromeCheck x = new PalindromeCheck(x1);
-            bool test1 = x.CheckText(x1);
+            bool test1 = x.CheckText();
             Assert.AreEqual(test1, false);
         }
 

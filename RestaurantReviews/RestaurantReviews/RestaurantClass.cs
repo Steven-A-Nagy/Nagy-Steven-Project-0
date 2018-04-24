@@ -6,12 +6,19 @@ using System.Threading.Tasks;
 
 namespace RestaurantReviews 
 {
-    class RestaurantClass : IReviewable
+    public class RestaurantClass : IReviewable
     {
         public string Name { get; set; }
-        public string Location { get; set; }
+        public string Address { get; set; }
+        public string Locality { get; set; }
+        public string City { get; set; }
+        public string Latitude { get; set; }
+        public string Longitude { get; set; }
+        public string Zipcode { get; set; }
+        public string Cuisines { get; set; }
+        public List<ReviewClass> ReviewList { get => reviewList; }
 
-        public List<ReviewClass> ReviewList = new List<ReviewClass>();
+        private List<ReviewClass> reviewList = new List<ReviewClass>();
 
         public void AddReview(ReviewClass NewReview)
         {
@@ -23,12 +30,12 @@ namespace RestaurantReviews
             throw new NotImplementedException();
         }
 
-        public ReviewClass GetReview()
+        public ReviewClass GetReview(string ReviewName)
         {
             throw new NotImplementedException();
         }
 
-        public void PrintRestaurantInfo()
+        public void PrintReview(string ReviewName)
         {
             throw new NotImplementedException();
         }
@@ -37,6 +44,5 @@ namespace RestaurantReviews
         {
             throw new NotImplementedException();
         }
-
     }
 }

@@ -16,7 +16,9 @@ namespace ConsoleApp3
             for (int i = 0; i<TextCheck.Count();i++)
             {
                 I1.Push(TextCheck[i]);
-                I2.Push(TextCheck[TextCheck.Count() - i-1]);
+                Console.Write(TextCheck[i]+" ");
+                I2.Push(TextCheck[TextCheck.Count() - i - 1]);
+                Console.Write(TextCheck[TextCheck.Count() - i-1]+"\n");
             }
         }
 
@@ -25,10 +27,10 @@ namespace ConsoleApp3
         public Stack<char> I2;
         
 
-        public bool CheckText(string TC)
+        public bool CheckText()
         {
             bool check = true;
-            for (int i = 0; i < TC.Count(); i++)
+            for (int i = 0; i < TextCheck.Count(); i++)
             {
                 string d1 = I1.Pop().ToString();
                 string d2 = I2.Pop().ToString();

@@ -10,6 +10,10 @@ namespace ConsoleApp3
     {
         static void Main(string[] args)
         {
+            PalindromeCheck test = new PalindromeCheck("race..");
+            Console.WriteLine(test.CheckText());
+            Console.ReadLine();
+
         }
     }
 }
