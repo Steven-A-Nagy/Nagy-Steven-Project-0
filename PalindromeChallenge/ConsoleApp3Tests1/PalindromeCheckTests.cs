@@ -33,10 +33,19 @@ namespace ConsoleApp3.Tests
         }
 
         [TestMethod()]
+        public void CheckTextTestTrueCINum()
+        {
+            string x1 = "1221";
+            PalindromeCheck x = new PalindromeCheck(x1);
+            bool test1 = x.CheckText(x1);
+            Assert.AreEqual(test1, true);
+
+        }
+
+        [TestMethod()]
         public void CheckTextTestTrueCIIgnorePunc()
         {
-            string x1 = "Race..ca?r";
-
+            string x1 = "Race..car";
             PalindromeCheck x = new PalindromeCheck(x1);
             bool test1 = x.CheckText(x1);
             Assert.AreEqual(test1, true);
@@ -46,7 +55,7 @@ namespace ConsoleApp3.Tests
         [TestMethod()]
         public void CheckTextTestFalse()
         {
-            string x1 = "raceq;aeiubvql;ruijcar";
+            string x1 = "q;aeiubvql;ruij";
             PalindromeCheck x = new PalindromeCheck(x1);
             bool test1 = x.CheckText(x1);
             Assert.AreEqual(test1, false);

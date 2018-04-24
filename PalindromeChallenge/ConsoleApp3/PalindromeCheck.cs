@@ -13,10 +13,10 @@ namespace ConsoleApp3
             TextCheck = new string(palindrome.Where(c => !char.IsPunctuation(c)).ToArray());
             I1 = new Stack<char>();
             I2 = new Stack<char>();
-            for (int i = 0; i<palindrome.Count();i++)
+            for (int i = 0; i<TextCheck.Count();i++)
             {
-                I1.Push(palindrome[i]);
-                I2.Push(palindrome[palindrome.Count() - i-1]);
+                I1.Push(TextCheck[i]);
+                I2.Push(TextCheck[TextCheck.Count() - i-1]);
             }
         }
 
