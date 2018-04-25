@@ -16,33 +16,53 @@ namespace RestaurantReviews
         public string Longitude { get; set; }
         public string Zipcode { get; set; }
         public string Cuisines { get; set; }
-        public List<ReviewClass> ReviewList { get => reviewList; }
+        public Dictionary<int, ReviewClass> ReviewList { get => reviewList; }
 
-        private List<ReviewClass> reviewList = new List<ReviewClass>();
+        private Dictionary<int, ReviewClass> reviewList = new Dictionary<int, ReviewClass>();
+
+        public RestaurantClass()
+        {
+            throw new NotImplementedException();
+        }
+
+        public RestaurantClass(string name, string address, string locality, string city, string latitude, string longitude, string zipcode, string cuisines)
+        {
+            Name = name;
+            Address = address;
+            Locality = locality;
+            City = city;
+            Latitude = latitude;
+            Longitude = longitude;
+            Zipcode = zipcode;
+            Cuisines = cuisines;
+        }
 
         public void AddReview(ReviewClass NewReview)
         {
-            throw new NotImplementedException();
+            ReviewList.Add(ReviewList.Count(), NewReview);
         }
 
-        public void RemoveReview(string ID)
+        public void RemoveReview(int ID)
         {
-            throw new NotImplementedException();
+            ReviewList.Remove(ID);
         }
 
-        public ReviewClass GetReview(string ReviewName)
+        public ReviewClass GetReview(int ID)
         {
-            throw new NotImplementedException();
+            return ReviewList[ID];
         }
 
-        public void PrintReview(string ReviewName)
+        public void PrintReview(int ID)
         {
-            throw new NotImplementedException();
+            ReviewList[ID].PrintFullReview();
         }
 
         public void PrintAllReviews()
         {
-            throw new NotImplementedException();
+            foreach (int element in ReviewList.Keys)
+            {
+                PrintReview(element);
+            }
         }
     }
 }

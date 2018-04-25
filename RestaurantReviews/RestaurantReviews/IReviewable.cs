@@ -8,11 +8,11 @@ namespace RestaurantReviews
 {
     public interface IReviewable
     {
-        List<ReviewClass> ReviewList { get; }
+        Dictionary<int,ReviewClass> ReviewList { get; }
         void AddReview(ReviewClass NewReview);
-        void RemoveReview(string ID);
-        ReviewClass GetReview(string ReviewName);
-        void PrintReview(string ReviewName);
+        void RemoveReview(int ID);
+        ReviewClass GetReview(int ID);
+        void PrintReview(int ID);
         void PrintAllReviews();
 
     }

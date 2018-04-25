@@ -8,67 +8,71 @@ namespace RestaurantReviews
 {
     public class ReviewClass : IReviewable
     {
-        public string ReviewID { get; set; }
         public int Rating { get; set; }
         public string ReviewerName { get; set; }
         public string ReviewBody { get; set; }
-        public List<ReviewClass> ReviewList { get => reviewList; }
+        public Dictionary<int,ReviewClass> ReviewList { get => reviewList; }
 
-        private List<ReviewClass> reviewList = new List<ReviewClass>();
+        private Dictionary<int, ReviewClass> reviewList = new Dictionary<int, ReviewClass>();
 
         public ReviewClass()
         {
-
+            throw new NotImplementedException();
         }
 
-        public ReviewClass(string rID, int rat,string revName, string revBody)
+        public ReviewClass(int rat,string revName, string revBody)
         {
-            ReviewID = rID; Rating = rat; ReviewerName = revName; ReviewBody = revBody;
+            Rating = rat; ReviewerName = revName; ReviewBody = revBody;
         }
 
         public void PrintReviewBody()
         {
-            throw new NotImplementedException();
+            Console.WriteLine(ReviewBody);
         }
 
         public void PrintName()
         {
-            throw new NotImplementedException();
+            Console.WriteLine("Reviewer: "+ReviewerName);
         }
 
         public void PrintRating()
         {
-            throw new NotImplementedException();
+            Console.WriteLine("Rating: " + Rating);
         }
         
         public void PrintFullReview()
         {
-            throw new NotImplementedException();
+            PrintName();
+            PrintRating();
+            PrintReviewBody();
         }
 
         public void AddReview(ReviewClass NewReview)
         {
-            throw new NotImplementedException();
+            ReviewList.Add(ReviewList.Count(),NewReview);
         }
 
-        public void RemoveReview(string ID)
+        public void RemoveReview(int ID)
         {
-            throw new NotImplementedException();
+            ReviewList.Remove(ID);
         }
 
-        public ReviewClass GetReview(string ReviewName)
+        public ReviewClass GetReview(int ID)
         {
-            throw new NotImplementedException();
+            return ReviewList[ID];
         }
 
-        public void PrintReview(string ReviewName)
+        public void PrintReview(int ID)
         {
-            throw new NotImplementedException();
+            ReviewList[ID].PrintFullReview();
         }
 
         public void PrintAllReviews()
         {
-            throw new NotImplementedException();
+            foreach(int element in ReviewList.Keys)
+            {
+                PrintReview(element);
+            }
         }
     }
 }
