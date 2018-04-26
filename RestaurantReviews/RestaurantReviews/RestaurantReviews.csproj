@@ -52,6 +52,7 @@
     <Compile Include="ReviewClass.cs" />
     <Compile Include="SearchRestaurants.cs" />
     <Compile Include="Serializer.cs" />
+    <Compile Include="Session.cs" />
     <Compile Include="SortRestaurant.cs" />
   </ItemGroup>
   <ItemGroup>

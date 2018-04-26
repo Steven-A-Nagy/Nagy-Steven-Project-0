@@ -8,7 +8,10 @@ namespace RestaurantReviews
 {
     public class Serializer
     {
-        
+        public Serializer()
+        {
+
+        }
 
     }
 }
