@@ -22,7 +22,7 @@ namespace RestaurantReviews
 
         public RestaurantClass()
         {
-            throw new NotImplementedException();
+            
         }
 
         public RestaurantClass(string name, string address, string locality, string city, string latitude, string longitude, string zipcode, string cuisines)

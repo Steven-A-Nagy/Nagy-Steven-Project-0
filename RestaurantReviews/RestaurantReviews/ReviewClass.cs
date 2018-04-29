@@ -17,7 +17,7 @@ namespace RestaurantReviews
 
         public ReviewClass()
         {
-            throw new NotImplementedException();
+            
         }
 
         public ReviewClass(int rat,string revName, string revBody)
