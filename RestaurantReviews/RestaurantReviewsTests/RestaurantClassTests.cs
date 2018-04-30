@@ -10,13 +10,13 @@ using System.Threading.Tasks;
 namespace RestaurantReviews.Tests
 {
     [TestClass()]
-    public class RestaurantClassTests
+    public class RestaurantTests
     {
         [TestMethod()]
         public void AddReviewTest()
         {
-            RestaurantClass test1 = new RestaurantClass("Otto Enoteca & Pizzeria", "1 5th Avenue, New York, NY 10003", "Greenwich Village", "New York City", "40.732013", "-73.996155", "10003", "Cafe");
-            ReviewClass testR1 = new ReviewClass(5, "Ken", "Excellent food.");
+            Restaurant test1 = new Restaurant("Otto Enoteca & Pizzeria", "1 5th Avenue, New York, NY 10003", "Greenwich Village", "New York City", "40.732013", "-73.996155", "10003", "Cafe");
+            Review testR1 = new Review(5, "Ken", "Excellent food.");
             test1.AddReview(testR1);
             Assert.AreEqual(test1.ReviewList.ContainsValue(testR1), true);
         }
@@ -24,8 +24,8 @@ namespace RestaurantReviews.Tests
         [TestMethod()]
         public void RemoveReviewTest()
         {
-            RestaurantClass test1 = new RestaurantClass("Otto Enoteca & Pizzeria", "1 5th Avenue, New York, NY 10003", "Greenwich Village", "New York City", "40.732013", "-73.996155", "10003", "Cafe");
-            ReviewClass testR1 = new ReviewClass(5, "Ken", "Excellent food.");
+            Restaurant test1 = new Restaurant("Otto Enoteca & Pizzeria", "1 5th Avenue, New York, NY 10003", "Greenwich Village", "New York City", "40.732013", "-73.996155", "10003", "Cafe");
+            Review testR1 = new Review(5, "Ken", "Excellent food.");
             test1.AddReview(testR1);
             test1.RemoveReview(0);
             Assert.AreEqual(test1.ReviewList.ContainsValue(testR1), false);
@@ -34,8 +34,8 @@ namespace RestaurantReviews.Tests
         [TestMethod()]
         public void GetReviewTest()
         {
-            RestaurantClass test1 = new RestaurantClass("Otto Enoteca & Pizzeria", "1 5th Avenue, New York, NY 10003", "Greenwich Village", "New York City", "40.732013", "-73.996155", "10003", "Cafe");
-            ReviewClass testR1 = new ReviewClass(5, "Ken", "Excellent food.");
+            Restaurant test1 = new Restaurant("Otto Enoteca & Pizzeria", "1 5th Avenue, New York, NY 10003", "Greenwich Village", "New York City", "40.732013", "-73.996155", "10003", "Cafe");
+            Review testR1 = new Review(5, "Ken", "Excellent food.");
             test1.AddReview(testR1);
             Assert.AreEqual(test1.GetReview(0), testR1);
         }
@@ -43,8 +43,8 @@ namespace RestaurantReviews.Tests
         [TestMethod()]
         public void PrintReviewTest()
         {
-            RestaurantClass test1 = new RestaurantClass("Otto Enoteca & Pizzeria", "1 5th Avenue, New York, NY 10003", "Greenwich Village", "New York City", "40.732013", "-73.996155", "10003", "Cafe");
-            ReviewClass test2 = new ReviewClass(1, "Ken", "Nvm, actually garbage.");
+            Restaurant test1 = new Restaurant("Otto Enoteca & Pizzeria", "1 5th Avenue, New York, NY 10003", "Greenwich Village", "New York City", "40.732013", "-73.996155", "10003", "Cafe");
+            Review test2 = new Review(1, "Ken", "Nvm, actually garbage.");
             test1.AddReview(test2);
 
             using (StringWriter sw = new StringWriter())
@@ -60,9 +60,9 @@ namespace RestaurantReviews.Tests
         [TestMethod()]
         public void PrintAllReviewsTest()
         {
-            RestaurantClass test1 = new RestaurantClass("Otto Enoteca & Pizzeria", "1 5th Avenue, New York, NY 10003", "Greenwich Village", "New York City", "40.732013", "-73.996155", "10003", "Cafe");
-            ReviewClass test2 = new ReviewClass(3, "Jenna", "Eh. It was alright.");
-            ReviewClass test3 = new ReviewClass(1, "Ken", "Nvm, actually garbage.");
+            Restaurant test1 = new Restaurant("Otto Enoteca & Pizzeria", "1 5th Avenue, New York, NY 10003", "Greenwich Village", "New York City", "40.732013", "-73.996155", "10003", "Cafe");
+            Review test2 = new Review(3, "Jenna", "Eh. It was alright.");
+            Review test3 = new Review(1, "Ken", "Nvm, actually garbage.");
             test1.AddReview(test2);
             test1.AddReview(test3);
 
@@ -77,9 +77,9 @@ namespace RestaurantReviews.Tests
         }
 
         [TestMethod()]
-        public void RestaurantClassTest()
+        public void RestaurantTest()
         {
-            RestaurantClass test1 = new RestaurantClass("Otto Enoteca & Pizzeria", "1 5th Avenue, New York, NY 10003", "Greenwich Village", "New York City", "40.732013", "-73.996155", "10003", "Cafe");
+            Restaurant test1 = new Restaurant("Otto Enoteca & Pizzeria", "1 5th Avenue, New York, NY 10003", "Greenwich Village", "New York City", "40.732013", "-73.996155", "10003", "Cafe");
             Assert.AreEqual(test1.Name, "Otto Enoteca & Pizzeria");
             Assert.AreEqual(test1.Address, "1 5th Avenue, New York, NY 10003");
             Assert.AreEqual(test1.City, "New York City");

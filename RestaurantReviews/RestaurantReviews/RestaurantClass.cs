@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace RestaurantReviews 
 {
-    public class RestaurantClass : IReviewable
+    public class Restaurant : IReviewable
     {
         public string Name { get; set; }
         public string Address { get; set; }
@@ -16,16 +16,16 @@ namespace RestaurantReviews
         public string Longitude { get; set; }
         public string Zipcode { get; set; }
         public string Cuisines { get; set; }
-        public Dictionary<int, ReviewClass> ReviewList { get => reviewList; }
+        public Dictionary<int, Review> ReviewList { get => reviewList; }
 
-        private Dictionary<int, ReviewClass> reviewList = new Dictionary<int, ReviewClass>();
+        private Dictionary<int, Review> reviewList = new Dictionary<int, Review>();
 
-        public RestaurantClass()
+        public Restaurant()
         {
             
         }
 
-        public RestaurantClass(string name, string address, string locality, string city, string latitude, string longitude, string zipcode, string cuisines)
+        public Restaurant(string name, string address, string locality, string city, string latitude, string longitude, string zipcode, string cuisines)
         {
             Name = name;
             Address = address;
@@ -37,7 +37,7 @@ namespace RestaurantReviews
             Cuisines = cuisines;
         }
 
-        public void AddReview(ReviewClass NewReview)
+        public void AddReview(Review NewReview)
         {
             ReviewList.Add(ReviewList.Count(), NewReview);
         }
@@ -47,7 +47,7 @@ namespace RestaurantReviews
             ReviewList.Remove(ID);
         }
 
-        public ReviewClass GetReview(int ID)
+        public Review GetReview(int ID)
         {
             return ReviewList[ID];
         }

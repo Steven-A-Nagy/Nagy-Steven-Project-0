@@ -6,21 +6,21 @@ using System.Threading.Tasks;
 
 namespace RestaurantReviews
 {
-    public class ReviewClass : IReviewable
+    public class Review //: IReviewable
     {
         public int Rating { get; set; }
         public string ReviewerName { get; set; }
         public string ReviewBody { get; set; }
-        public Dictionary<int,ReviewClass> ReviewList { get => reviewList; }
+        //public Dictionary<int,Review> ReviewList { get => reviewList; }
 
-        private Dictionary<int, ReviewClass> reviewList = new Dictionary<int, ReviewClass>();
+        //private Dictionary<int, Review> reviewList = new Dictionary<int, Review>();
 
-        public ReviewClass()
+        public Review()
         {
             
         }
 
-        public ReviewClass(int rat,string revName, string revBody)
+        public Review(int rat,string revName, string revBody)
         {
             Rating = rat; ReviewerName = revName; ReviewBody = revBody;
         }
@@ -47,32 +47,32 @@ namespace RestaurantReviews
             PrintReviewBody();
         }
 
-        public void AddReview(ReviewClass NewReview)
-        {
-            ReviewList.Add(ReviewList.Count(),NewReview);
-        }
+        //public void AddReview(Review NewReview)
+        //{
+        //    ReviewList.Add(ReviewList.Count(),NewReview);
+        //}
 
-        public void RemoveReview(int ID)
-        {
-            ReviewList.Remove(ID);
-        }
+        //public void RemoveReview(int ID)
+        //{
+        //    ReviewList.Remove(ID);
+        //}
 
-        public ReviewClass GetReview(int ID)
-        {
-            return ReviewList[ID];
-        }
+        //public Review GetReview(int ID)
+        //{
+        //    return ReviewList[ID];
+        //}
 
-        public void PrintReview(int ID)
-        {
-            ReviewList[ID].PrintFullReview();
-        }
+        //public void PrintReview(int ID)
+        //{
+        //    ReviewList[ID].PrintFullReview();
+        //}
 
-        public void PrintAllReviews()
-        {
-            foreach(int element in ReviewList.Keys)
-            {
-                PrintReview(element);
-            }
-        }
+        //public void PrintAllReviews()
+        //{
+        //    foreach(int element in ReviewList.Keys)
+        //    {
+        //        PrintReview(element);
+        //    }
+        //}
     }
 }
