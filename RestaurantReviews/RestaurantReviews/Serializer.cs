@@ -16,21 +16,21 @@ namespace RestaurantReviews
         {
             System.IO.File.WriteAllText(ConfigurationManager.AppSettings.GetValues("JSONpath")[0], input);
         }
-        public List<RestaurantClass> SerializedFromFile()
+        public List<Restaurant> SerializedFromFile()
         {
             string deser = System.IO.File.ReadAllText(ConfigurationManager.AppSettings.GetValues("JSONpath")[0]);
             return DeserializeRestaurants(deser);
         }
 
-        public string SerializeRestaurants(List<RestaurantClass> sr)
+        public string SerializeRestaurants(List<Restaurant> sr)
         {
             string response = JsonConvert.SerializeObject(sr);
             return response;
         }
 
-        public List<RestaurantClass> DeserializeRestaurants(string serializedJSON)
+        public List<Restaurant> DeserializeRestaurants(string serializedJSON)
         {
-            List<RestaurantClass> returnList = JsonConvert.DeserializeObject<List<RestaurantClass>>(serializedJSON);
+            List<Restaurant> returnList = JsonConvert.DeserializeObject<List<Restaurant>>(serializedJSON);
             return returnList;
         }
 
