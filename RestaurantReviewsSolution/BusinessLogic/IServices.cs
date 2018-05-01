@@ -11,21 +11,19 @@ namespace BusinessLogic
     {
         List<Restaurant> TopThreeRests();
         List<Restaurant> AllRests();
-        List<Restaurant> SearchAll();
-        Restaurant SearchByName(string name);
-        List<Restaurant> GetAllRestaurants();
+        List<Restaurant> SearchAll(string searchMeth);
         void SortRestaurants(List<Restaurant> restList);
-        void AddRestaurant(Restaurant rest);
-        void UpdateRestaurant(Restaurant rest);
-        void DeleteRestaurant(Restaurant rest);
+        void AddRest(Restaurant rest);
+        void UpdateRest(Restaurant rest);
+        void DeleteRest(Restaurant rest);
     }
 
     public interface IRevServ
     {
         List<Review> GetAllRestReviews(Restaurant rest);
         Review GetReviewByRestAndID(Restaurant rest, int ID);
-        void AddReview(Restaurant rest, Review rev);
-        void ModifyReview(Restaurant rest, Review rev);
-        void DeleteReview(Restaurant rest, Review rev);
+        void AddRev(Restaurant rest, Review rev);
+        void ModifyRev(Restaurant rest, Review rev);
+        void DeleteRev(Restaurant rest, Review rev);
     }
 }

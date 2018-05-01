@@ -10,34 +10,38 @@ namespace BusinessLogic
 {
     public class RestServices : IRestServ
     {
-        private readonly IRestaurantRepository restaurantRepo;
-        public void AddRestaurant(Restaurant rest)
+        private readonly IRestaurantRepository _restaurantRepo;
+        public RestServices(IRestaurantRepository restaurantRepo)
         {
-            throw new NotImplementedException();
+            _restaurantRepo = restaurantRepo;
+        }
+
+        public void AddRest(Restaurant rest)
+        {
+            _restaurantRepo.AddRestaurant(rest);
         }
 
         public List<Restaurant> AllRests()
         {
-            throw new NotImplementedException();
+            return _restaurantRepo.GetAllRestaurants().ToList();
         }
 
-        public void DeleteRestaurant(Restaurant rest)
+        public void DeleteRest(Restaurant rest)
         {
-            throw new NotImplementedException();
+            _restaurantRepo.DeleteRestaurant(rest);
         }
 
-        public List<Restaurant> GetAllRestaurants()
+        public List<Restaurant> SearchAll(string searchMeth)
         {
-            throw new NotImplementedException();
-        }
+            //switch (searchMeth)
+            //{
+            //    case "name":
 
-        public List<Restaurant> SearchAll()
-        {
-            throw new NotImplementedException();
-        }
+            //    case "city":
 
-        public Restaurant SearchByName(string name)
-        {
+            //    case "address":
+            //    default:
+            //}
             throw new NotImplementedException();
         }
 
@@ -51,7 +55,7 @@ namespace BusinessLogic
             throw new NotImplementedException();
         }
 
-        public void UpdateRestaurant(Restaurant rest)
+        public void UpdateRest(Restaurant rest)
         {
             throw new NotImplementedException();
         }
@@ -59,12 +63,12 @@ namespace BusinessLogic
 
     public class RevServices : IRevServ
     {
-        public void AddReview(Restaurant rest, Review rev)
+        public void AddRev(Restaurant rest, Review rev)
         {
             throw new NotImplementedException();
         }
 
-        public void DeleteReview(Restaurant rest, Review rev)
+        public void DeleteRev(Restaurant rest, Review rev)
         {
             throw new NotImplementedException();
         }
@@ -79,7 +83,7 @@ namespace BusinessLogic
             throw new NotImplementedException();
         }
 
-        public void ModifyReview(Restaurant rest, Review rev)
+        public void ModifyRev(Restaurant rest, Review rev)
         {
             throw new NotImplementedException();
         }
