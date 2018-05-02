@@ -19,11 +19,10 @@ namespace Repository
 
     public interface IReviewRepository
     {
-        Review GetById(int id, Restaurant rest);
-        IEnumerable<Review> GetAllReviews();
-        void AddReview(Review rest);
-        void ModifyReview(Review rest);
-        void DeleteReview(Review rest);
+        Review GetById(int RestId, int RevId);
+        IEnumerable<Review> GetAllReviewsByRestID(int id);
+        void AddReview(Restaurant rest, Review rev);
+        void DeleteReview(Restaurant rest, Review rev);
         void SaveReviews();
     }
 }

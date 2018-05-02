@@ -12,7 +12,8 @@ namespace BusinessLogic
         List<Restaurant> TopThreeRests();
         List<Restaurant> AllRests();
         List<Restaurant> SearchAll(string searchMeth);
-        void SortRestaurants(List<Restaurant> restList);
+        List<Restaurant> SortRestaurants(string queryName);
+        Restaurant GetRestaurantByID(int id);
         void AddRest(Restaurant rest);
         void UpdateRest(Restaurant rest);
         void DeleteRest(Restaurant rest);
@@ -23,7 +24,6 @@ namespace BusinessLogic
         List<Review> GetAllRestReviews(Restaurant rest);
         Review GetReviewByRestAndID(Restaurant rest, int ID);
         void AddRev(Restaurant rest, Review rev);
-        void ModifyRev(Restaurant rest, Review rev);
         void DeleteRev(Restaurant rest, Review rev);
     }
 }

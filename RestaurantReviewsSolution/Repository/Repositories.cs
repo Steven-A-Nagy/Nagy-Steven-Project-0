@@ -50,29 +50,28 @@ namespace Repository
     {
         private readonly RepositoryContext _repoContext;
 
-        public void AddReview(Review rest)
+        public void AddReview(Restaurant rest, Review rev)
         {
-            throw new NotImplementedException();
+            rest.Reviews.Add(rev);
+            _repoContext.Restaurants.Add(rest);
+            _repoContext.SaveChanges();
         }
 
-        public void DeleteReview(Review rest)
+        public void DeleteReview(Restaurant rest, Review rev)
         {
-            throw new NotImplementedException();
+            rest.Reviews.Remove(rev);
+            _repoContext.Restaurants.Add(rest);
+            _repoContext.SaveChanges();
         }
 
-        public IEnumerable<Review> GetAllReviews()
+        public IEnumerable<Review> GetAllReviewsByRestID(int id)
         {
-            return _repoContext.Reviews;
+            return _repoContext.Restaurants.Find(id).Reviews;
         }
 
-        public Review GetById(int id,Restaurant rest)
+        public Review GetById(int RestId, int RevId)
         {
-            throw new NotImplementedException();
-        }
-
-        public void ModifyReview(Review rest)
-        {
-            throw new NotImplementedException();
+            return _repoContext.Restaurants.Find(RestId).Reviews.ElementAt(RevId - 1);
         }
 
         public void SaveReviews()

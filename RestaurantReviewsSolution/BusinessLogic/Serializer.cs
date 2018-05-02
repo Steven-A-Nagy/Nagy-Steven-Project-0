@@ -21,7 +21,7 @@ namespace BusinessLogic
             return DeserializeRestaurants(deser);
         }
 
-        public string SerializeRestaurants(List<Restaurant> sr)
+        public string SerializeRestaurants(List<Restaurant> sr) //serializes reviews by proxy, as all reviews only exist attached to restaurants
         {
             string response = JsonConvert.SerializeObject(sr);
             return response;

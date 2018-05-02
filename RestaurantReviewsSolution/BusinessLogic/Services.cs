@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using RestaurantReviewsModels;
 using Repository;
+using System.Text.RegularExpressions;
 
 namespace BusinessLogic
 {
@@ -30,62 +31,84 @@ namespace BusinessLogic
         {
             _restaurantRepo.DeleteRestaurant(rest);
         }
+        public Restaurant GetRestaurantByID(int id)
+        {
+            return _restaurantRepo.GetById(id);
+        }
 
         public List<Restaurant> SearchAll(string searchMeth)
         {
-            //switch (searchMeth)
-            //{
-            //    case "name":
-
-            //    case "city":
-
-            //    case "address":
-            //    default:
-            //}
-            throw new NotImplementedException();
+            IEnumerable<Restaurant> checkList = _restaurantRepo.GetAllRestaurants().Where(x => Regex.IsMatch(x.restName,searchMeth));
+            return checkList.ToList();
         }
 
-        public void SortRestaurants(List<Restaurant> restList)
+        public List<Restaurant> SortRestaurants(string queryName)
         {
-            throw new NotImplementedException();
+            IEnumerable<Restaurant> checkList = _restaurantRepo.GetAllRestaurants();
+            switch(queryName.ToLower())
+            {
+                case "name":
+                    return checkList.OrderBy(x=>x.restName).ToList();
+                case "city":
+                    return checkList.OrderBy(x => x.city).ToList();
+                case "locality":
+                    return checkList.OrderBy(x => x.locality).ToList();
+                case "address":
+                    return checkList.OrderBy(x => x.restAddress).ToList();
+                case "cuisines":
+                    return checkList.OrderBy(x => x.cuisines).ToList();
+                case "zipcode":
+                    return checkList.OrderBy(x => x.zipcode).ToList();
+                default:
+                    return new List<Restaurant>();
+            }
+        }
+
+        public double getAverageRating(Restaurant rest)
+        {
+            double averageRating = Math.Round(rest.Reviews.Select(y => (y.rating.HasValue ? y.rating.Value : 0)).Average(), 2);
+            return averageRating;
         }
 
         public List<Restaurant> TopThreeRests()
         {
-            throw new NotImplementedException();
+            IEnumerable<Restaurant> checkList = _restaurantRepo.GetAllRestaurants();
+            return checkList.OrderByDescending(x => getAverageRating(x)).Take(3).ToList();
         }
 
         public void UpdateRest(Restaurant rest)
         {
-            throw new NotImplementedException();
+            _restaurantRepo.ModifyRestaurant(rest);
         }
     }
 
     public class RevServices : IRevServ
     {
+        private readonly IReviewRepository _reviewRepo;
+        public RevServices(IReviewRepository reviewRepo)
+        {
+            _reviewRepo = reviewRepo;
+        }
+
         public void AddRev(Restaurant rest, Review rev)
         {
-            throw new NotImplementedException();
+            _reviewRepo.AddReview(rest, rev);
         }
 
         public void DeleteRev(Restaurant rest, Review rev)
         {
-            throw new NotImplementedException();
+            _reviewRepo.DeleteReview(rest, rev);
         }
 
         public List<Review> GetAllRestReviews(Restaurant rest)
         {
-            throw new NotImplementedException();
+            return _reviewRepo.GetAllReviewsByRestID(rest.ID).ToList();
         }
 
         public Review GetReviewByRestAndID(Restaurant rest, int ID)
         {
-            throw new NotImplementedException();
+            return _reviewRepo.GetById(rest.ID, ID);
         }
 
-        public void ModifyRev(Restaurant rest, Review rev)
-        {
-            throw new NotImplementedException();
-        }
     }
 }
