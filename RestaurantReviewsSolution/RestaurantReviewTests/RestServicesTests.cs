@@ -5,22 +5,30 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Moq;
+using RestaurantReviewsModels;
+using Repository;
 
 namespace BusinessLogic.Tests
 {
     [TestClass()]
     public class RestServicesTests
     {
-        [TestMethod()]
-        public void RestServicesTest()
+        private readonly Mock<IRestaurantRepository> MockRepo;
+
+        public RestServicesTests()
         {
-            Assert.Fail();
+            MockRepo = new Mock<IRestaurantRepository>();
+            MockRepo.Setup(x => x.AddRestaurant(It.IsAny<Restaurant>()));
         }
 
         [TestMethod()]
         public void AddRestTest()
         {
-            Assert.Fail();
+            var service = new RestServices(MockRepo.Object);
+            Restaurant testaurant = new Restaurant(); testaurant.ID = 0; testaurant.restName = "fakeRestName"; testaurant.city = "fakeCity"; testaurant.latitude = "fake"; testaurant.longitude = "fake"; testaurant.locality = "land o fakes"; testaurant.ID = 0; testaurant.restAddress = "fakeAddress"; testaurant.cuisines = "fakeCuisine"; testaurant.zipcode = "12345";
+            service.AddRest(testaurant);
+            MockRepo.Verify(m => m.AddRestaurant(It.IsAny<Restaurant>()), Times.Once);
         }
 
         [TestMethod()]
@@ -62,7 +70,10 @@ namespace BusinessLogic.Tests
         [TestMethod()]
         public void TopThreeRestsTest()
         {
-            Assert.Fail();
+            var service = new RestServices(MockRepo.Object);
+            service.TopThreeRests();
+
+            MockRepo.Verify(m => m.GetAllRestaurants(), Times.Once);
         }
 
         [TestMethod()]
