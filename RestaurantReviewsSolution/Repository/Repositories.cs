@@ -10,6 +10,10 @@ namespace Repository
     public class RestaurantRepository : IRestaurantRepository
     {
         private readonly RepositoryContext _repoContext;
+        public RestaurantRepository(RepositoryContext context)
+        {
+            _repoContext = context;
+        }
 
         public void AddRestaurant(Restaurant rest)
         {
@@ -49,6 +53,10 @@ namespace Repository
     public class ReviewRepository : IReviewRepository
     {
         private readonly RepositoryContext _repoContext;
+        public ReviewRepository(RepositoryContext context)
+        {
+            _repoContext = context;
+        }
 
         public void AddReview(Restaurant rest, Review rev)
         {

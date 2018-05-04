@@ -62,7 +62,13 @@ namespace BusinessLogic.Tests
         [TestMethod()]
         public void SearchAllTest()
         {
-            Assert.Fail();
+            var service = new RestServices(MockRepo.Object);
+            List<Restaurant> checkList = service.SearchAll("fakeRest");
+            foreach(Restaurant x in checkList)
+            {
+                Console.WriteLine(x.restName);
+            }
+            Assert.AreEqual(checkList[0],"fakeRest");
         }
 
         [TestMethod()]
